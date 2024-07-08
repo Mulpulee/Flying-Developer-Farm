@@ -13,13 +13,11 @@ public class GhostBullet : MonoBehaviour, IPacketListener<BulletPacket>
 
     private Queue<BulletPacket> m_createBulletQueue;
     private Dictionary<int, GameObject> m_ghostBullets;
-    private int m_consumedID;
 
-    public void Init(bool pIsHost)
+    public void Init()
     {
         m_createBulletQueue = new Queue<BulletPacket>();
         m_ghostBullets = new Dictionary<int, GameObject>();
-        m_consumedID = pIsHost ? 10000 : 20000;
     }
 
     private void Start()

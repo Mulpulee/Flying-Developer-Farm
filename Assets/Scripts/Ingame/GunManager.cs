@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class GunManager : MonoBehaviour
 {
+    public static int UsedBulletID { get; private set; }
+
     [SerializeField] private GameObject m_aim;
     [SerializeField] private GameObject m_bullet;
     [SerializeField] private GameObject m_gun;
+
+    private void Start()
+    {
+        
+    }
 
     private void Update()
     {

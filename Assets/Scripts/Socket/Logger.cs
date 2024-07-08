@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace SocketLib
 {
     public static class Logger
     {
-        public static void Message(Object pMessage)
+        public static void Message(System.Object pMessage)
         {
-            Console.WriteLine($"[ MESSAGE ] : {pMessage}");
+            Debug.Log($"[ MESSAGE ] : {pMessage}");
         }
 
-        public static void Error(Object pError)
+        public static void Error(System.Object pError)
         {
-            Console.WriteLine($"[ ERROR ] : {pError}");
+            Debug.LogError($"[ ERROR ] : {pError}");
         }
     }
 }

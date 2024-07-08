@@ -1791,11 +1791,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3568795971629751889, guid: 60e0901650c2eb741a0e53df3fa7c4c6, type: 3}
       propertyPath: m_deadline.x
-      value: 20.17
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3568795971629751889, guid: 60e0901650c2eb741a0e53df3fa7c4c6, type: 3}
       propertyPath: m_deadline.y
-      value: 11.71
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60e0901650c2eb741a0e53df3fa7c4c6, type: 3}
