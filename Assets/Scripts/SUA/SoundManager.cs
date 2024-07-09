@@ -7,14 +7,22 @@ public class SoundManager : MonoBehaviour {
     [SerializeField] private List<AudioClip> m_clips;
     private List<AudioSource> m_sources;
     [SerializeField] private float m_sfxVol;
+    [SerializeField] private float m_masterVol;
+
 
     private void Start()
     {
         m_sources = new List<AudioSource>();
         m_sfxVol = 0.5f;
+        m_masterVol = 1.0f;
     }
+    //파이팅 합시당 ㅋㅋ
 
     public void SetVolume(float value)
+    {
+        m_sfxVol = value;
+    }
+    public void SetMasterVolume(float value)
     {
         m_sfxVol = value;
     }
@@ -49,6 +57,8 @@ public class SoundManager : MonoBehaviour {
         }
     }
 }
+
+
 
 
 
