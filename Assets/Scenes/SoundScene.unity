@@ -893,8 +893,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_clips:
-  - {fileID: 8300000, guid: e4c3928ca5b11494a94ba1f76f96604b, type: 3}
-  m_sfxVol: 0
+  - {fileID: 8300000, guid: 0dcfa57b18fcfd14fb7a376ccfcb0ad2, type: 3}
+  m_sfxVol: 0.5
 --- !u!1 &1720015558
 GameObject:
   m_ObjectHideFlags: 0
@@ -982,7 +982,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.51
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
