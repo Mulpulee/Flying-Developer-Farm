@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Buffers;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,18 +19,20 @@ namespace SocketLib
             m_packetQueue = new ConcurrentQueue<IPacket>();
         }
 
-        public void AssignPacket<T>(Int32 pID) where T : IPacket,new()
+        public void AssignPacket<T>(Int32 pID) where T : IPacket, new()
         {
             m_packetCtor.Add(pID, () => new T());
         }
 
-        public void PushPacket(Buffer pBuffer,Int32 pSize)
+        public void PushPacket(Buffer pBuffer, Int32 pOffset, Int32 pSize)
         {
             IPacketReader reader = Dependency<IPacketReader>.Get();
-            reader.Deserialize(pBuffer.Array,pSize);
+            Byte[] byteArray = ArrayPool<Byte>.Shared.Rent(pSize);
+            Array.Copy(pBuffer.Array, pOffset, byteArray, 0, pSize);
+            reader.Deserialize(byteArray, pSize);
 
             Int32 type = reader.ReadInt();
-            if(m_packetCtor.TryGetValue(type,out var ctor))
+            if (m_packetCtor.TryGetValue(type, out var ctor))
             {
                 IPacket packet = ctor.Invoke();
                 packet.Deserialize(reader);
@@ -40,6 +43,7 @@ namespace SocketLib
             {
                 Logger.Error($"packet type [{type}] is not assigned");
             }
+            ArrayPool<Byte>.Shared.Return(byteArray);
         }
 
         public Boolean TryGetPacket(out IPacket packet)

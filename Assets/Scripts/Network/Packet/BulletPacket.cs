@@ -35,18 +35,10 @@ public class BulletPacket : IPacket
         ID = pReader.ReadInt();
 
         float posX, posY;
-        switch (Type)
-        {
-            case BulletPacketTypes.Create:
-            case BulletPacketTypes.Sync:
-                posX = pReader.ReadSingle();
-                posY = pReader.ReadSingle();
-                Position = new Vector2(posX, posY);
-                Damage = pReader.ReadSingle();
-                break;
-            default:
-                break;
-        }
+        posX = pReader.ReadSingle();
+        posY = pReader.ReadSingle();
+        Position = new Vector2(posX, posY);
+        Damage = pReader.ReadSingle();
     }
 
     public void Serialize(IPacketWritter pWritter)
@@ -54,17 +46,8 @@ public class BulletPacket : IPacket
         pWritter.WriteInt(PacketType);
         pWritter.WriteInt((int)Type);
         pWritter.WriteInt(ID);
-
-        switch (Type)
-        {
-            case BulletPacketTypes.Create:
-            case BulletPacketTypes.Sync:
-                pWritter.WriteSingle(Position.x);
-                pWritter.WriteSingle(Position.y);
-                pWritter.WriteSingle(Damage);
-                break;
-            default:
-                break;
-        }
+        pWritter.WriteSingle(Position.x);
+        pWritter.WriteSingle(Position.y);
+        pWritter.WriteSingle(Damage);
     }
 }

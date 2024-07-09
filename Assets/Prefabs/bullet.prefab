@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_power: 30
   m_damage: 3
-  m_deadline: {x: 0, y: 0}
+  m_deadline: {x: 10, y: 6}
 --- !u!114 &9010722302425671534
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,8 +7,9 @@ public class PlayerStat : MonoBehaviour
 {
     [SerializeField] private Slider m_hpBar;
 
-    private float m_maxHp = 100;
-    private float m_hp = 100;
+    private float m_maxHp = 200;
+    private float m_hp = 200;
+    public float HP { get { return m_hp; } set { m_hp = value; } }
 
     private void Update()
     {

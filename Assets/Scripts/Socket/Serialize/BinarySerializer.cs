@@ -59,6 +59,7 @@ namespace SocketLib
             m_size = DEFAULT_BUFFER_LENGTH;
             m_buffer = System.Buffers.ArrayPool<Byte>.Shared.Rent(DEFAULT_BUFFER_LENGTH);
             m_enabled = true;
+            WriteInt(0);
         }
 
         public unsafe void WriteInt(int pValue)
@@ -113,14 +114,14 @@ namespace SocketLib
 
         public Byte[] Serialize()
         {
-            Byte[] result = new Byte[m_offset];
-            Array.Copy(m_buffer, result, m_offset);
+            Byte[] result = new Byte[m_offset + 4];
+            Byte[] packetsize = BitConverter.GetBytes(m_offset);
+            Array.Copy(packetsize, 0, result, 0, packetsize.Length);
+            Array.Copy(m_buffer, 0, result, packetsize.Length, m_offset);
             m_enabled = false;
             ArrayPool<Byte>.Shared.Return(m_buffer, true);
             m_buffer = null;
-
             return result;
         }
     }
 }
-

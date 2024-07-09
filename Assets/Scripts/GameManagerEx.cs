@@ -6,6 +6,7 @@ using System.Net.Sockets;
 using System.Net;
 using UnityEngine;
 using UnityEngine.Windows;
+using UnityEngine.SceneManagement;
 
 public class GameManagerEx : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class GameManagerEx : MonoBehaviour
     public static GameManagerEx Instance { get { return instance; } }
 
     private PacketHandler handler;
+    public bool IsHost { get; private set; }
 
     private void Awake()
     {
@@ -58,6 +60,7 @@ public class GameManagerEx : MonoBehaviour
             listener.Close();
             listener.Dispose();
             OpenGame(new GameClient(socket, handler), true);
+            IsHost = true;
         }
         catch (Exception ex)
         {
@@ -87,10 +90,26 @@ public class GameManagerEx : MonoBehaviour
         }
         Debug.Log("¹æ Á¢¼Ó");
         OpenGame(client, false);
+        IsHost = false;
     }
 
     private void OpenGame(GameClient pClient, Boolean pIshost)
     {
         PacketController.Instance.Init(pClient);
+        StartCoroutine(LoadSceneRoutine("SampleScene", () =>
+        {
+            FindObjectOfType<GunManager>().Init(pClient, pIshost);
+            FindObjectOfType<PlayerController>().Init(pClient);
+        }
+        ));
+    }
+
+    private IEnumerator LoadSceneRoutine(string pScene, Action pCallback)
+    {
+        AsyncOperation async = SceneManager.LoadSceneAsync(pScene);
+
+        yield return new WaitUntil(() => async.isDone);
+
+        pCallback.Invoke();
     }
 }
