@@ -730,7 +730,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1709322688}
+      - m_Target: {fileID: 1709322690}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
         m_MethodName: PlaySFX
         m_Mode: 5
@@ -857,7 +857,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1709322689}
-  - component: {fileID: 1709322688}
+  - component: {fileID: 1709322690}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
@@ -865,21 +865,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1709322688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1709322687}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d49b1289f6012e245be4793a09084348, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_clips:
-  - {fileID: 8300000, guid: 0dcfa57b18fcfd14fb7a376ccfcb0ad2, type: 3}
-  m_sfxVol: 0.4
 --- !u!4 &1709322689
 Transform:
   m_ObjectHideFlags: 0
@@ -895,6 +880,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1709322690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709322687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 772d48f5cd74391489861fb83960c14d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_clips:
+  - {fileID: 8300000, guid: e4c3928ca5b11494a94ba1f76f96604b, type: 3}
+  m_sfxVol: 0
 --- !u!1 &1720015558
 GameObject:
   m_ObjectHideFlags: 0
@@ -986,7 +986,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1709322688}
+      - m_Target: {fileID: 1709322690}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
         m_MethodName: SetVolume
         m_Mode: 0
