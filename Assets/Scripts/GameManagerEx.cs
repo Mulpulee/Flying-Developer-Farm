@@ -8,13 +8,25 @@ using UnityEngine;
 using UnityEngine.Windows;
 using UnityEngine.SceneManagement;
 
+public enum InGameState
+{
+    Start,
+    Battle,
+    Card,
+    Item,
+    End
+}
+
 public class GameManagerEx : MonoBehaviour
 {
     private static GameManagerEx instance;
     public static GameManagerEx Instance { get { return instance; } }
 
-    private PacketHandler handler;
     public bool IsHost { get; private set; }
+
+    private static InGameState m_state;
+    private PacketHandler handler;
+    private bool isMyTurn;
 
     private void Awake()
     {
@@ -102,6 +114,13 @@ public class GameManagerEx : MonoBehaviour
             FindObjectOfType<PlayerController>().Init(pClient);
         }
         ));
+
+        if (pIshost)
+        {
+            m_state = InGameState.Start;
+            isMyTurn = true;
+            StartCoroutine(InGame());
+        }
     }
 
     private IEnumerator LoadSceneRoutine(string pScene, Action pCallback)
@@ -111,5 +130,26 @@ public class GameManagerEx : MonoBehaviour
         yield return new WaitUntil(() => async.isDone);
 
         pCallback.Invoke();
+    }
+
+    private IEnumerator InGame()
+    {
+        yield return null;
+
+        switch (m_state)
+        {
+            case InGameState.Start:
+                break;
+            case InGameState.Battle:
+                break;
+            case InGameState.Card:
+                break;
+            case InGameState.Item:
+                break;
+            case InGameState.End:
+                break;
+            default:
+                break;
+        }
     }
 }

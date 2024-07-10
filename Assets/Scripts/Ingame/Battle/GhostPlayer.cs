@@ -31,6 +31,7 @@ public class GhostPlayer : MonoBehaviour, IPacketListener<PlayerPacket>
                 break;
             case PlayerPacketTypes.Dead:
                 Debug.Log("Dead!!");
+                Destroy(gameObject);
                 break;
             default:
                 break;

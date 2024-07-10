@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 648b448c0ecac634c9e7ad7c70776342, type: 3}
+  m_Name: Nimble
+  m_EditorClassIdentifier: 
+  ID: 70005
+  Name: "\uB0A0\uB835\uD568"
+  Description: "\uC774\uB3D9\uC18D\uB3C4\uAC00 3 \uC99D\uAC00\uD55C\uB2E4."
+  Rank: 0
+  Stat:
+    Attack_Speed: 0
+    Bullet: 0
+    Reload_Speed: 0
+    Damage: 0
+    Health: 0
+    Skill_Cooldown: 0
+    Move_Speed: 0

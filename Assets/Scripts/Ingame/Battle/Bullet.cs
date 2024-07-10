@@ -34,6 +34,7 @@ public class Bullet : MonoBehaviour
         {
             collision.GetComponent<PlayerStat>().Hit(m_damage);
         }
+        else m_damage = 0;
         m_client.Send(new BulletPacket(BulletPacketTypes.Delete, m_ID, Vector2.zero, m_damage));
         Destroy(gameObject);
     }

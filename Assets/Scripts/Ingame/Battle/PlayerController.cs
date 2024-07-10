@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
         if (m_stat.HP <= 0)
         {
             m_client.Send(new PlayerPacket(PlayerPacketTypes.Dead, transform.position, m_gun.rotation, m_stat.HP));
+            Destroy(gameObject);
         }
     }
 
