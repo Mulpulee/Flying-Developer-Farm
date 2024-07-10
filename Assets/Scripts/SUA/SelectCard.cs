@@ -10,18 +10,10 @@ public class SelectCard : MonoBehaviour
 
     private CardEffect m_effect;
 
-    //gameObject.GetComponent<CardEffect>();
-    //GameObject.FInd("Select Card").GetComponent<CardEffect>();
-
-
     void Start()
     {
         m_effect = GetComponent<CardEffect>();
     }
-
-    //transform.localScale += new Vector3(0.1, 0.1, 0.1);
-    //Button source = gameObject.AddComponent<AudioSource>();
-    //m_sources.Add(source);
 
     void Update()
     {
@@ -31,8 +23,6 @@ public class SelectCard : MonoBehaviour
             m_index--;
             m_buttons[m_index].gameObject.GetComponent<CardEffect>().Selected();
 
-            //transform.localScale += new Vector3(0.1, 0.1, 0.1);
-            //transform.localScale += new Vector3(0.1, 0.1, 0.1);
         }
 
         if (Input.GetKeyDown(KeyCode.D) && m_index != 4)
@@ -46,53 +36,7 @@ public class SelectCard : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
         {
             // 여기서 호출
-            Debug.Log((m_index + 1) + "번째 ㅎ");
+            Debug.Log(m_index + "번째 카드 선택했습니당 ㅎ");
         }
     }
-
-
-    //Button source = gameObject.AddComponent<AudioSource>();
-    //m_sources.Add(source);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
