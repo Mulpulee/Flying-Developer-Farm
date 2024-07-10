@@ -16,7 +16,7 @@ public class SoundManager : MonoBehaviour {
         m_sfxVol = 0.5f;
         m_masterVol = 1.0f;
     }
-    //파이팅 합시당 ㅋㅋ
+
 
     public void SetVolume(float value)
     {
