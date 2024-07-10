@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 648b448c0ecac634c9e7ad7c70776342, type: 3}
   m_Name: Opportunity
   m_EditorClassIdentifier: 
-  ID: 0
-  Name: 
-  Description: 
-  Rank: 0
+  ID: 70029
+  Name: "\uAE30\uD68C"
+  Description: "\uBC29\uC5B4\uB97C \uC0AC\uC6A9\uD55C \uD6C4, \uB2E4\uC74C \uACF5\uACA9\uC758
+    \uD53C\uD574\uB7C9\uC774 75 \uC99D\uAC00\uD55C\uB2E4."
+  Rank: 1
   Stat:
     Attack_Speed: 0
     Bullet: 0
@@ -24,3 +25,4 @@ MonoBehaviour:
     Health: 0
     Skill_Cooldown: 0
     Move_Speed: 0
+  Illust: {fileID: 21300000, guid: 037b792df8c74524d8ea2ac0f627ad6e, type: 3}

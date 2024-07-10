@@ -18,7 +18,10 @@ public class SelectPacket : IPacket
     public int Index { get; set; }
     public int[] Array { get; set; }
 
-    public SelectPacket() { }
+    public SelectPacket()
+    {
+        Array = new int[5];
+    }
 
     public SelectPacket(SelectPacketTypes pType, int pID, int[] pArray)
     {
@@ -31,8 +34,7 @@ public class SelectPacket : IPacket
     {
         Type = (SelectPacketTypes)pReader.ReadInt();
         Index = pReader.ReadInt();
-
-        if (Type == SelectPacketTypes.List) for (int i = 0; i < 5; i++) Array[i] = pReader.ReadInt();
+        for (int i = 0; i < 5; i++) Array[i] = pReader.ReadInt();
     }
 
     public void Serialize(IPacketWritter pWritter)

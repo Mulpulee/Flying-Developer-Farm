@@ -12,15 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 648b448c0ecac634c9e7ad7c70776342, type: 3}
   m_Name: Arrogance
   m_EditorClassIdentifier: 
-  ID: 0
-  Name: 
-  Description: 
-  Rank: 0
+  ID: 70030
+  Name: "\uC624\uB9CC"
+  Description: "\uC0C1\uB300\uC758 \uCCB4\uB825\uC774 200\uC99D\uAC00\uD569\uB2C8\uB2E4. 
+    \uC790\uC2E0\uC758 \uC774\uB3D9\uC18D\uB3C4\uAC00 10 \uC99D\uAC00\uD569\uB2C8\uB2E4.
+    \uC790\uC2E0\uC758 \uCD1D\uC54C \uAC2F\uC218\uAC00 8 \uC99D\uAC00\uD569\uB2C8\uB2E4."
+  Rank: 1
   Stat:
     Attack_Speed: 0
-    Bullet: 0
+    Bullet: 8
     Reload_Speed: 0
     Damage: 0
     Health: 0
     Skill_Cooldown: 0
-    Move_Speed: 0
+    Move_Speed: 10
+  Illust: {fileID: 21300000, guid: 649cf9bbc17cbbb4eb87017b888e66b4, type: 3}

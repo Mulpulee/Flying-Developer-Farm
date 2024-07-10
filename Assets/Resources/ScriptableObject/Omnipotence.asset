@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 648b448c0ecac634c9e7ad7c70776342, type: 3}
   m_Name: Omnipotence
   m_EditorClassIdentifier: 
-  ID: 0
-  Name: 
-  Description: 
-  Rank: 0
+  ID: 70032
+  Name: "\uC804\uB2A5"
+  Description: "\uC55E\uC73C\uB85C \uC2B9\uB9AC \uC2DC, \uC7A5\uC2DD\uC774 \uC544\uB2CC
+    \uCE74\uB4DC\uB97C \uACE0\uB985\uB2C8\uB2E4. \uCE74\uB4DC \uAC2F\uC218 \uC81C\uD55C\uC774
+    \uC0AC\uB77C\uC9D1\uB2C8\uB2E4."
+  Rank: 2
   Stat:
     Attack_Speed: 0
     Bullet: 0
@@ -24,3 +26,4 @@ MonoBehaviour:
     Health: 0
     Skill_Cooldown: 0
     Move_Speed: 0
+  Illust: {fileID: 21300000, guid: f8837a6f75b54314c820c1c6bae8528f, type: 3}

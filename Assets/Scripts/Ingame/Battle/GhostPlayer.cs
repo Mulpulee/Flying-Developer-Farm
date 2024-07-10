@@ -30,7 +30,10 @@ public class GhostPlayer : MonoBehaviour, IPacketListener<PlayerPacket>
                 m_stat.HP = pPacket.Health;
                 break;
             case PlayerPacketTypes.Dead:
-                Debug.Log("Dead!!");
+                if (GameManagerEx.Instance.IsHost)
+                {
+                    GameManagerEx.Instance.ChangeState(InGameState.Card, true);
+                }
                 Destroy(gameObject);
                 break;
             default:

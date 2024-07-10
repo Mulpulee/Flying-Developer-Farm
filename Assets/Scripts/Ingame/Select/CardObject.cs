@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [Serializable]
-public struct CardStat
+public struct Stat
 {
     public float Attack_Speed;
     public int Bullet;
@@ -23,6 +23,17 @@ public enum CardRank
     Legend
 }
 
+public enum Stats
+{
+    Attack_Speed,
+    Bullet,
+    Reload_Speed,
+    Damage,
+    Health,
+    Skill_Cooldown,
+    Move_Speed
+}
+
 [CreateAssetMenu(fileName = "NewCardObject", menuName = "Scriptable Object/Card")]
 public class CardObject : ScriptableObject
 {
@@ -31,5 +42,7 @@ public class CardObject : ScriptableObject
     public string Description;
 
     public CardRank Rank;
-    public CardStat Stat;
+    public Stat Stat;
+
+    public Sprite Illust;
 }

@@ -45,6 +45,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Face
+    uniqueID: 2547750893
+    locked: 0
   - name: Aim
     uniqueID: 742642383
     locked: 0

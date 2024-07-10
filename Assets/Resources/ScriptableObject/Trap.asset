@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 648b448c0ecac634c9e7ad7c70776342, type: 3}
   m_Name: Trap
   m_EditorClassIdentifier: 
-  ID: 0
-  Name: 
-  Description: 
-  Rank: 0
+  ID: 70028
+  Name: "\uD568\uC815"
+  Description: "\uC790\uC2E0\uC774 \uBC29\uC5B4 \uC0AC\uC6A9 \uC2DC \uADFC\uCC98\uC758
+    \uC0C1\uB300\uC5D0\uAC8C 100\uC758 \uD53C\uD574\uB97C \uC90D\uB2C8\uB2E4."
+  Rank: 1
   Stat:
     Attack_Speed: 0
     Bullet: 0
@@ -24,3 +25,4 @@ MonoBehaviour:
     Health: 0
     Skill_Cooldown: 0
     Move_Speed: 0
+  Illust: {fileID: 21300000, guid: 5da65ce628632b749ae7419f109b3e8e, type: 3}

@@ -18,5 +18,7 @@ public enum PacketTypes
 {
     Player = 10001,
     Bullet = 10002,
-    Select = 10003
+    Select = 10003,
+    Skill = 10004,
+    State = 10005
 }

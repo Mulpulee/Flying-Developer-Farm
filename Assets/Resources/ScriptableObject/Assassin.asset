@@ -26,3 +26,4 @@ MonoBehaviour:
     Health: 0
     Skill_Cooldown: 0
     Move_Speed: 15
+  Illust: {fileID: 21300000, guid: 82a1c698bc9e31c4e9fbfc22fa6a22db, type: 3}

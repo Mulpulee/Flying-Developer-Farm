@@ -12,15 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 648b448c0ecac634c9e7ad7c70776342, type: 3}
   m_Name: Lodge
   m_EditorClassIdentifier: 
-  ID: 0
-  Name: 
-  Description: 
-  Rank: 0
+  ID: 70025
+  Name: "\uACB0\uC0AC"
+  Description: "\uB354 \uC774\uC0C1 \uC7AC\uC7A5\uC804\uC744 \uD560 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4.
+    \uD53C\uD574\uB7C9\uC774 500 \uC99D\uAC00\uD569\uB2C8\uB2E4."
+  Rank: 1
   Stat:
     Attack_Speed: 0
     Bullet: 0
     Reload_Speed: 0
-    Damage: 0
+    Damage: 500
     Health: 0
     Skill_Cooldown: 0
     Move_Speed: 0
+  Illust: {fileID: 21300000, guid: 336254d4f0b4e4a489c50e46c6c7d6bb, type: 3}

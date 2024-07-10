@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 648b448c0ecac634c9e7ad7c70776342, type: 3}
   m_Name: Absorb
   m_EditorClassIdentifier: 
-  ID: 0
-  Name: 
-  Description: 
-  Rank: 0
+  ID: 70027
+  Name: "\uD761\uC218"
+  Description: "\uACF5\uACA9 \uC131\uACF5 \uC2DC, \uCCB4\uB825\uC744 100 \uD68C\uBCF5\uD569\uB2C8\uB2E4."
+  Rank: 1
   Stat:
     Attack_Speed: 0
     Bullet: 0
@@ -24,3 +24,4 @@ MonoBehaviour:
     Health: 0
     Skill_Cooldown: 0
     Move_Speed: 0
+  Illust: {fileID: 21300000, guid: b555acebcd8347d46bdbe652865bc696, type: 3}
