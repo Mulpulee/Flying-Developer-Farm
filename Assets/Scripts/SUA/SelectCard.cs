@@ -28,12 +28,8 @@ public class SelectCard : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A) && m_index != 0)
         {
             m_buttons[m_index].gameObject.GetComponent<CardEffect>().Canceled();
-
-            //CardEffect.Canceled(m_buttons[m_index]);
-            m_index++;
-            //CardEffect.Selected(m_buttons[m_index]);
+            m_index--;
             m_buttons[m_index].gameObject.GetComponent<CardEffect>().Selected();
-
 
             //transform.localScale += new Vector3(0.1, 0.1, 0.1);
             //transform.localScale += new Vector3(0.1, 0.1, 0.1);
@@ -41,15 +37,16 @@ public class SelectCard : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.D) && m_index != 4)
         {
-            //CardEffect.Canceled(m_buttons[m_index]);
-            m_index--;
-            //CardEffect.Selected(m_buttons[m_index]);
+            m_buttons[m_index].gameObject.GetComponent<CardEffect>().Canceled();
+            m_index++;
+            m_buttons[m_index].gameObject.GetComponent<CardEffect>().Selected();
 
         }
 
         if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
         {
             // 여기서 호출
+            Debug.Log((m_index + 1) + "번째 ㅎ");
         }
     }
 
