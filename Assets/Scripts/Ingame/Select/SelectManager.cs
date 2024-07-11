@@ -113,8 +113,6 @@ public class SelectManager : MonoBehaviour, IPacketListener<SelectPacket>
 
     private IEnumerator EndSelecting()
     {
-        yield return new WaitForSeconds(1);
-
         m_cardSelector.gameObject.SetActive(false);
         if (GameManagerEx.Instance.IsHost)
         {

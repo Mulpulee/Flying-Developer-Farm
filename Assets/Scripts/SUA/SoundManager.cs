@@ -3,8 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class SoundManager : MonoBehaviour {
-    [SerializeField] private List<AudioClip> m_clips;
+public class SoundManager : MonoBehaviour
+{
+    private static SoundManager instance;
+    public static SoundManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance  = FindObjectOfType<SoundManager>();
+                if (instance == null)
+                {
+                    GameObject @object = new GameObject();
+                    instance = @object.AddComponent<SoundManager>();
+                }
+            }
+
+            return instance;
+        }
+    }
+
+    private Dictionary<string, AudioClip> m_clips;
     private List<AudioSource> m_sources;
     [SerializeField] private float m_sfxVol;
     [SerializeField] private float m_masterVol;
@@ -15,6 +35,13 @@ public class SoundManager : MonoBehaviour {
         m_sources = new List<AudioSource>();
         m_sfxVol = 0.5f;
         m_masterVol = 1.0f;
+
+        m_clips = new Dictionary<string, AudioClip>();
+
+        foreach (var s in Resources.LoadAll<AudioClip>("Sounds"))
+        {
+            m_clips.Add(s.name, s);
+        }
     }
 
 
@@ -29,19 +56,15 @@ public class SoundManager : MonoBehaviour {
 
     public void PlaySFX(string pName)
     {
-        foreach (AudioClip clip in m_clips)
-        {
-            if (clip.name == pName)
-            {
-                AudioSource source = gameObject.AddComponent<AudioSource>();
-                source.loop = false;
-                source.clip = clip;
-                source.volume = m_sfxVol;
-                source.Play();
+        if (!m_clips.ContainsKey(pName)) return;
 
-                m_sources.Add(source);
-            }
-        }
+        AudioSource source = gameObject.AddComponent<AudioSource>();
+        source.loop = false;
+        source.clip = m_clips[pName];
+        source.volume = m_sfxVol;
+        source.Play();
+
+       m_sources.Add(source);
     }
 
     private void Update()

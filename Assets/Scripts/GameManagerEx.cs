@@ -182,6 +182,7 @@ public class GameManagerEx : MonoBehaviour, IPacketListener<StatePacket>
 
     public void OnPacket(StatePacket pPacket)
     {
+        Debug.Log(pPacket.GameState);
         m_state = pPacket.GameState;
         isMyTurn = pPacket.Turn == 1 ? true : false;
         StartCoroutine(InGame());
