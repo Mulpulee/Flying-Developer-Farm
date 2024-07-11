@@ -41,6 +41,7 @@ public class SelectCard : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.A) && m_index != 0)
         {
+            SoundManager.Instance.PlaySFX("효과음2");
             m_cards[m_index--].Canceled();
             //m_index--;
             m_cards[m_index].Selected();
@@ -50,6 +51,7 @@ public class SelectCard : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.D) && m_index != 4)
         {
+            SoundManager.Instance.PlaySFX("효과음2");
             m_cards[m_index++].Canceled();
             //m_index++;
             m_cards[m_index].Selected();
@@ -59,6 +61,8 @@ public class SelectCard : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
         {
+            SoundManager.Instance.PlaySFX("효과음1");
+            isMyTurn = false;
             m_select.Selected(m_index);
             Debug.Log(m_index + "번째 카드 선택했습니당 ㅎ");
         }

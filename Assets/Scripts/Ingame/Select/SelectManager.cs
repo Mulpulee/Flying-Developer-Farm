@@ -108,12 +108,11 @@ public class SelectManager : MonoBehaviour, IPacketListener<SelectPacket>
     {
         m_client.Send(new SelectPacket(SelectPacketTypes.Submit, pIndex, m_list));
         m_index = pIndex;
-        StartCoroutine(EndSelecting());
+        EndSelecting();
     }
 
-    private IEnumerator EndSelecting()
+    private void EndSelecting()
     {
-        m_cardSelector.gameObject.SetActive(false);
         if (GameManagerEx.Instance.IsHost)
         {
             if (m_state == InGameState.Start)
@@ -133,7 +132,6 @@ public class SelectManager : MonoBehaviour, IPacketListener<SelectPacket>
                 GameManagerEx.Instance.ChangeState(InGameState.Battle, true);
             }
         }
-        yield return null;
     }
 
     public void OnPacket(SelectPacket pPacket)

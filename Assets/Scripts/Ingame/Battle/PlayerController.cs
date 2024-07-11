@@ -26,6 +26,16 @@ public class PlayerController : MonoBehaviour
         m_rigid = GetComponent<Rigidbody2D>();
         m_gun = transform.GetChild(0);
         m_stat = GetComponent<PlayerStat>();
+        m_stat.SetStat(new Stat()
+        {
+            Attack_Speed = 1.5f,
+            Bullet = 3,
+            Reload_Speed = 2,
+            Damage = 50,
+            Health = 200,
+            Skill_Cooldown = 8,
+            Move_Speed = 5
+        });
     }
 
     private void Update()
